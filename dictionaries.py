@@ -53,7 +53,7 @@ print(alien_1)
 lil_bro={
     'Name':'Ibrahim',
     'Age':'56',
-    'Strong_foot':'Left',
+    'Strong_foot':'Right',
 }
 print(lil_bro['Name'].upper())
 
@@ -102,8 +102,33 @@ users={
 }
 for username,user_info in users.items():
     print(f"\nUsername:{username}")
-    full_name=f"{user_info['first']}{user_info['last']}"
+    full_name=f"{user_info['First']} {user_info['Last']}"
     location=user_info['Location']
+    print(f'\tFull name:{full_name.title()}')
+    print(f'\tLocation:{location.title()}')
 
-print(f'\tFull name:{full_name.title()}')
-print(f'\tLocation:{location.title()}')
+
+people ={
+    'aba4':{
+        "Name":'Aba',
+        'Residence':'44 becker street',
+        'Cell':'024567899',
+    },
+    'kojo5':{
+        'Name':'Kojo',
+        'Residence':'56 docker street',
+        'Cell':'0546789945',
+    },
+    'ibro10':{
+        'Name':'ibrahim',
+        'Residence':'76 muslim street',
+        'Cell':'0567890098'
+    }
+}
+for a,b in people.items():
+    Cinfo = f"\n{b['Name']} {b['Residence']}"
+    tphone = f"\n{b['Cell']}"
+    Sentence = f"your name and residence are: {Cinfo}"
+    print(Sentence)
+
+
