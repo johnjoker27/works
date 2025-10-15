@@ -52,16 +52,29 @@ while current_number <= 10:
 toppings = "enter what toppings you would like."
 
 
-while pizza.lower() != '' or 'quit':
+while True:
+   pizza = input(toppings)
    
-   pizza = dict(input(toppings))
-   print(f"\n {pizza}? Seems like a good choice.")
-   
-   if pizza.lower() == '' or 'quit':
-      break
+   if pizza.lower() == 'quit':
+     break
    else:
-      continue
-  
+      print(f" \ni'll add {pizza} toppings to your pizza")
+      
 
+
+#using while loops to move items from one list to another
+unconfirmed_users =['alice','brian','candace']
+confirmed_users = []
+
+while unconfirmed_users:
+   current_user = unconfirmed_users.pop()
+
+   print(f'Verifying User:{current_user.title()}')
+   confirmed_users.append(current_user)
+
+   print('\n the following users have been confirmed:')
+   for confirmed_user in confirmed_users:
+      print(confirmed_user.title())
+      
    
    
