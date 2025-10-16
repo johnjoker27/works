@@ -43,9 +43,9 @@ def make_shirt(shirt_size,message):
     
 make_shirt('medium-sized','Allahu Akbr')
 
-def make_shirt(shirt_size = 'large',message):
+def make_shirt(shirt_size = 'large',mesage):
     print(f'i wear size {shirt_size} shirts.')
-    print(f" I want the message {message} printed on it.")
+    print(f" I want the message {mesage} printed on it.")
     
 make_shirt('Allahu Akbr wa Al-Rahman.')
 
