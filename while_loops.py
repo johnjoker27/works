@@ -75,6 +75,63 @@ while unconfirmed_users:
    print('\n the following users have been confirmed:')
    for confirmed_user in confirmed_users:
       print(confirmed_user.title())
-      
+
    
    
+   # Collecting data on what mountains people would like to climb
+responses = {}
+
+polling_active = True  # this is the flag
+
+while polling_active:
+    name = input('\nWhat is your name? ')
+    response = input('Which mountain would you like to climb? ')
+
+    responses[name] = response
+
+    repeat = input('Would you like to enter another one? (yes/no) ')
+    if repeat.lower() == 'no':
+        polling_active = False
+
+print('\n--- Poll Results ---')
+for name, response in responses.items():
+    print(f'{name} would like to climb {response}')
+
+
+#sandwiches
+sandwich_orders=['pastrami','beef','pastrami','chicken','fish','cheese','pastrami']
+finished_sandwiches = []
+
+while 'pastrami' in sandwich_orders:
+  sandwich_orders.remove('pastrami')
+  print(sandwich_orders) 
+
+
+while sandwich_orders:
+   finished_sandwich = sandwich_orders.pop()
+
+   print(f'here is {finished_sandwich} sandwich')
+   finished_sandwiches.append(finished_sandwich)
+
+   print('the following sandwiches have been ordered:')
+   for finished_sandwich in finished_sandwiches:
+      print(finished_sandwich.upper())
+
+
+#dream travel spot
+dream ={}
+poll_active = True
+
+while poll_active:
+   name = input('Name?')
+   destination = input('What is your dream vacation spot?')
+
+
+   dream[name]=destination
+   another = input('is there another placr you would like to visit?(yes/no)')
+   if another.lower() == 'no':
+      poll_active = False
+
+print('Here is where you all would like to travel...')
+for name,destination in dream.items():
+   print(f"{name.title()} would like to travel to {destination}")    
