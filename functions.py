@@ -1,106 +1,139 @@
-def greet_user(username): #this is the func definition part
-    '''display a simple greeting'''
-    print(f'hello,{username.title()}')
+#  1. Basic Greeting Function
+def greet_user(username):
+    """Display a simple greeting."""
+    print(f"Hello, {username.title()}!")
 
 greet_user('jesse')
 
 
-#message
-def display_message(name):
-    print(f"hello! i am learning to write {name.title()}")
+# 2. Display Message
+def display_message(topic):
+    """Display a message about what you're learning."""
+    print(f"Hello! I am learning to write {topic.title()}.")
 
-display_message('functions')    
+display_message('functions')
 
-#favourite book
+
+#  3. Favourite Book
 def favourite_book(book):
-    print(f"One of my favourite books is {book}")
+    """Print a message about a favourite book."""
+    print(f"One of my favourite books is {book}.")
+
+favourite_book('Alice in the Borderlands.')
 
 
-favourite_book('Alice in the borderlands.')
-
-
-def describe_pet(animal_type,pet_name):
-    '''displays info about pets '''
-    print(f"\n I have a {animal_type}")
-    print(f"My {animal_type}'s name is {pet_name.title()}")
-
-describe_pet('hamster','harry')
-
-#using keyword arguments
-describe_pet(animal_type ='dog',pet_name ='berry')
-
-#using default values
-def describe_pet(pet_name, animal_type='dog'):
+#  4. Describing Pets
+def describe_pet(animal_type, pet_name):
     """Display information about a pet."""
     print(f"\nI have a {animal_type}.")
     print(f"My {animal_type}'s name is {pet_name.title()}.")
 
-describe_pet(pet_name='willie')
+# Using positional arguments
+describe_pet('hamster', 'harry')
 
-def make_shirt(shirt_size,message):
-    print(f'i wear size {shirt_size} shirts.')
-    print(f" I want the message {message} printed on it.")
-    
-make_shirt('medium-sized','Allahu Akbr')
-
-def make_shirt(shirt_size = 'large',mesage):
-    print(f'i wear size {shirt_size} shirts.')
-    print(f" I want the message {mesage} printed on it.")
-    
-make_shirt('Allahu Akbr wa Al-Rahman.')
+# Using keyword arguments
+describe_pet(animal_type='dog', pet_name='berry')
 
 
-def describe_city(city,country= 'Ghana'):
-    print(f"{city} in {country}")
+#  5. Describing Pets with Default Values
+def describe_pet_default(pet_name, animal_type='dog'):
+    """Display information about a pet with a default animal type."""
+    print(f"\nI have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name.title()}.")
+
+describe_pet_default(pet_name='willie')
+
+
+# 6. Make Shirt Function
+def make_shirt(message, shirt_size='large'):
+    """Describe a shirt with a message."""
+    print(f"I wear size {shirt_size} shirts.")
+    print(f"I want the message '{message}' printed on it.")
+
+make_shirt('Allahu Akbar wa Al-Rahman.')
+
+
+# 7. Describe City
+def describe_city(city, country='Ghana'):
+    """Display a city and its country."""
+    print(f"{city} is in {country}.")
 
 describe_city('Accra')
 describe_city('Kumasi')
 describe_city('Tamale')
 
-#returning a simple
-def get_formatted_name(first_name,last_name,middle_name =""):
-    '''Return a full name, neatly formatted.'''
+
+# 8. Return Formatted Name
+def get_formatted_name(first_name, last_name, middle_name=""):
+    """Return a full name, neatly formatted."""
     if middle_name:
-     full_name = f"{first_name} {middle_name} {last_name}"
+        full_name = f"{first_name} {middle_name} {last_name}"
     else:
         full_name = f"{first_name} {last_name}"
     return full_name.title()
 
-musician = get_formatted_name('jimi','hendrix')
+musician = get_formatted_name('jimi', 'hendrix')
 print(musician)
 
-#returning dictionaries
+
+# 9. Returning Dictionaries
 def build_person(first_name, last_name):
-    '''Return a dictionary of information about a person'''
-    person = {'first': first_name,'last_name': last_name}
+    """Return a dictionary of information about a person."""
+    person = {'first': first_name, 'last': last_name}
     return person
 
-
-music_man = build_person('jimmy','threx')
+music_man = build_person('jimmy', 'threx')
 print(music_man)
 
 
-def build_man(first_name,last_name,age=None):
-    """Return a dictionary of information about a person."""
+# 10. Dictionary with Optional Age
+def build_man(first_name, last_name, age=None):
+    """Return a dictionary of information about a person, with optional age."""
     person = {'first': first_name, 'last': last_name}
     if age:
         person['age'] = age
     return person
 
-nigga = build_man('jimmy','hendrix',age = 27)
-print(nigga)
+man = build_man('jimmy', 'hendrix', age=27)
+print(man)
 
 
-#greeter with while loops
-def get_formmatted_name(first_name,last_name):
-    full_name = f"{first_name} {last_name}"
-    return full_name.title()
+#  11. Greeter with While Loop
+def get_formatted_name_loop(first_name, last_name):
+    """Return a full name neatly formatted."""
+    return f"{first_name} {last_name}".title()
 
-while True:
-    print('What is ur gov name?')
-    f_name = input('first name....')
-    l_name = input('last name?')
+# Uncomment this if you want to run the loop
+# while True:
+#     print('What is your name? (Enter "q" to quit)')
+#     f_name = input('First name: ')
+#     if f_name.lower() == 'q':
+#         break
+#     l_name = input('Last name: ')
+#     if l_name.lower() == 'q':
+#         break
+#
+#     formatted_name = get_formatted_name_loop(f_name, l_name)
+#     print(f"\nHello, {formatted_name}!")
 
-    formatted_name = get_formatted_name(f_name,l_name)
-    print(f"\n Hello. {formatted_name}!")
-    
+
+# 12. City-Country Function with Loop
+def city_country(city_name, country_name):
+    """Return a string showing a city and its country."""
+    return f"{city_name.title()} is in {country_name.title()}."
+
+# Uncomment this if you want to run the loop
+# while True:
+#     print('\nTell me the city and country you would like to visit.')
+#     print('(Enter "end" anytime to quit.)')
+#
+#     city_nom = input('City: ')
+#     if city_nom.lower() == 'end':
+#         break
+#
+#     country_nom = input('Country: ')
+#     if country_nom.lower() == 'end':
+#         break
+#
+#     final_destination = city_country(city_nom, country_nom)
+#     print(f"\n{final_destination}\n")
