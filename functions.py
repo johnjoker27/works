@@ -137,3 +137,36 @@ def city_country(city_name, country_name):
 #
 #     final_destination = city_country(city_nom, country_nom)
 #     print(f"\n{final_destination}\n")
+
+#this is a function that stores data about a music album
+def make_album(music_name,music_boy,song_number=None):
+    '''Returning a dictionary'''
+    albums = {'music_name':music_name,'music_boy':music_boy,}
+    if song_number:
+        albums['song_number'] = song_number
+    return albums
+
+album1 = make_album('made in lagos','wizkid')
+album2 = make_album('love damini','burna boy')
+album3 = make_album( 'timeless','davido', song_number=17)
+
+print(album1)
+print(album2)
+print(album3)
+
+while True:
+    music_title = input('What is the name of the song? or enter q to quit.')
+    if music_title.lower() == 'q':
+        break
+    music_maker = input('Enter the name of the creator: ')
+    if music_maker.lower() == 'q':
+        break
+    song_num = input('Enter the number of the song.')
+    if song_num.strip() == "":
+        album_owner = make_album(music_title,music_maker)
+    else:
+        album_owner = make_album(music_title,music_maker,int(song_num))
+
+   
+    print(album_owner)    
+
