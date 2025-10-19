@@ -182,3 +182,36 @@ def greet_users(names):
 usernames = ['ty','nina','gringo']
 greet_users(usernames)
 
+
+#modifying a list in a function
+
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+while unprinted_designs:
+    current_design = unprinted_designs.pop()
+    print(f"\n Printing model:{current_design}")
+    completed_models.append(current_design)
+
+#Display all completed models.
+print('\n The following models have been printed.')
+for completed_model in completed_models:
+    print(completed_model)
+
+def print_models(unprinted_designs,completed_models):
+    '''this part is to print the designs'''
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print(f'\n Printing model:{current_design} ')
+        completed_models.append(current_design)
+
+
+def show_completed_models(completed_models):
+    '''Show all the models that were printed'''
+    print(f'\n the following models were printed:')
+    for complete_model in completed_models:
+        print(complete_model)
+
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+print_models(unprinted_designs,completed_models)
+show_completed_models(completed_models)
