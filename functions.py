@@ -170,3 +170,15 @@ while True:
    
     print(album_owner)    
 
+
+#lists in functions
+def greet_users(names):
+    '''print a simple greeting for everyone in a group'''
+    for name in names:
+        msg = f'Hello human {name.title()}!'
+        print(msg)
+
+
+usernames = ['ty','nina','gringo']
+greet_users(usernames)
+
