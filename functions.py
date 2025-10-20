@@ -231,6 +231,27 @@ def show_messages(message_list):
     for message in message_list:
         print(message)
 
+def send_messages(send_list, sent_list):
+    while send_list:
+        current_message = send_list.pop() 
+        print(f"Sending message: {current_message}")
+        sent_list.append(current_message)  
+
+messages = [
+    'this is the end',
+    'close your eyes and count to 10',
+    'Let the sky fall',
+    'A thousand miles apart'
+]
+
+sent_messages = []
+
+send_messages(messages, sent_messages)
+
+print("\nOriginal list:", messages)
+print("Sent messages:", sent_messages)
+
+
 def send_messages(unsent_messages,sent_messages):
     while unsent_messages:
         current_messages = unsent_messages.pop()
@@ -246,3 +267,15 @@ send_messages(unsent,sent)
 
 print('the following messages were not  printed:',unsent)
 print('the following messages were printed:',sent)
+
+
+
+#using * in functions
+def pizza_additions(*toppings):
+    '''Summary of pizza toppings'''
+    print('the following toppingd were added:')
+    for topping in toppings:
+        print('-',topping)
+
+pizza_additions('pepperoni')
+pizza_additions('mushrooms','green peppers','extra cheese')
