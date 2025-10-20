@@ -215,3 +215,34 @@ unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
 completed_models = []
 print_models(unprinted_designs,completed_models)
 show_completed_models(completed_models)
+
+#using print_models(unprinted_designs[:],completed_models) -the : makes a copy of the list and uses that one instead of the original one
+
+
+#message function
+messages = [
+    'this is the end',
+    'close your eyes and count to 10',
+    'Let the sky fall',
+    'A thousand miles apart'
+]
+
+def show_messages(message_list):
+    for message in message_list:
+        print(message)
+
+def send_messages(unsent_messages,sent_messages):
+    while unsent_messages:
+        current_messages = unsent_messages.pop()
+        print(f"The following messages have been sent: {current_messages}")
+        sent_messages.append(current_messages)
+
+unsent = messages[:]    
+sent = []    
+
+show_messages(messages)   
+send_messages(unsent,sent)    
+
+
+print('the following messages were not  printed:',unsent)
+print('the following messages were printed:',sent)
