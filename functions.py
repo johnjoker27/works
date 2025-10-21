@@ -279,3 +279,46 @@ def pizza_additions(*toppings):
 
 pizza_additions('pepperoni')
 pizza_additions('mushrooms','green peppers','extra cheese')
+
+
+def make_pizza(size,*toppings):
+    '''Summarize the pizza that we are about making'''
+    print(f"\nMaking a {size}-inch pizza with the following toppings:")
+    for topping in toppings:
+        print(f"-{topping}")
+
+
+make_pizza(17,'cabbage')
+make_pizza(17,'mushrooms','green peppers','extra cheese')
+
+
+def build_profile(first,last,**user_info):
+    '''Building a dictionary containing everything we know about a user'''
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+  
+user_profile = build_profile('albert','einstein',location = 'princeton',field = 'physics')
+print(user_profile)  
+
+
+
+#sandwiches function using **
+def sandwich(name,size,**sandwich_order):
+    sandwich_order['name'] = name
+    sandwich_order['size'] = size
+    return sandwich_order
+
+hung = sandwich('hameed',28,bread = 'sugar',meat = 'beef')
+print(hung)
+
+
+def car(car_name,car_model,**car_customizables):
+     car_customizables['car_name'] = car_name
+     car_customizables['car_models'] = car_model
+     return car_customizables
+
+make_car = car('subaru', 'outback', color='blue', tow_package=True)
+print(make_car)
+
+
