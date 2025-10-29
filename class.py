@@ -32,3 +32,114 @@ your_dog = Dog('Lucy',4)
 print(f"\nYour dog's name is {your_dog.name}.")
 print(f"Your dog is {your_dog.age} years old.")
 your_dog.sit()
+
+
+#ex9
+#restaurant
+class Restaurant:
+    '''This is an exercise so pay no heed.'''
+    def __init__(self,restaurant_name,cuisine_type):
+        '''Initailizing the restaurant_name and cuisine_type'''
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+
+
+    def describe_restaurant(self):
+        """This function prints some info about the restaurant."""
+        print(f"{ self.restaurant_name } is a great restaurant and the serve great {self.cuisine_type} food.")
+
+
+
+    def  open_restaurant(self):
+        """This function is to tell the user that the restaurant is open."""
+        print(f"{self.restaurant_name} is now open!!")
+
+
+restaurant = Restaurant('THe_vodka_shak','Russian')
+
+print(f"Restaurant Name: {restaurant.restaurant_name}")
+print(f"Cuisine Type: {restaurant.cuisine_type}")
+#tion is to tell the Three Restaurants 
+class Restaurant:
+    '''This is an exercise so pay no heed.'''
+    def __init__(self,restaurant_name,cuisine_type):
+        '''Initailizing the restaurant_name and cuisine_type'''
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+
+
+    def describe_restaurant(self):
+        """This function prints some info about the restaurant."""
+        print(f"{ self.restaurant_name } is a great restaurant and the serve great {self.cuisine_type} food.")
+
+
+
+    def  open_restaurant(self):
+        """This funcuser that the restaurant is open."""
+        print(f"{self.restaurant_name} is now open!!")
+
+
+restaurant = Restaurant('THe_vodka_shak','Russian')
+
+print(f"Restaurant Name: {restaurant.restaurant_name}")
+print(f"Cuisine Type: {restaurant.cuisine_type}")
+
+restaurant1 = Restaurant("mama kitchen","fish")
+restaurant1.describe_restaurant()
+restaurant2 = Restaurant("nina's room","Nigerian")
+restaurant2.describe_restaurant()
+restaurant3 = Restaurant("Halal rest","Muslim food")
+restaurant3.describe_restaurant()
+
+class User:
+    def __init__(self,first_name,last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+    
+
+    def describe_user(self):
+        print(f"My name is {self.last_name} {self.first_name}.")
+       
+
+
+
+    def greet_user(self):
+        print(f"Hello! {self.first_name} {self.last_name} glad to have you back.")
+       
+
+hello = User("Aminu","Abdul-Hameed")
+hello.describe_user()
+hello.greet_user()
+
+
+
+
+#the car class
+class Car:
+    """A simple attempt to represent a car."""
+
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0 
+        
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+
+    def read_odometer(self):
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+
+# Create an instance of the Car class
+my_new_car = Car('audi', 'a4', 2024)
+
+# Display car info
+print(my_new_car.get_descriptive_name())
+
+# Display odometer reading
+my_new_car.read_odometer()
