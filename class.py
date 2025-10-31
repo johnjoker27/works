@@ -124,11 +124,16 @@ class Car:
         self.model = model
         self.year = year
         self.odometer_reading = 0 
+      
 
     def get_descriptive_name(self):
         """Return a neatly formatted descriptive name."""
         long_name = f"{self.year} {self.make} {self.model}"
         return long_name.title()
+    
+    def fill_gas_tank(self):
+        """this is just something i added later when the book explained a concept."""
+        print("remember to check the gas tank before you set off.")
 
     def read_odometer(self):
         """Print a statement showing the car's mileage."""
@@ -180,9 +185,93 @@ class ElectricCar(Car):
     def __init__(self,make,model,year):
         """Inirialize attributes of the parent class."""
         super().__init__(make,model,year)
+        self.battery_size = 40
 
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kWh battery.")
 
+    def fill_gas_tank():
+        """This is when you notice that electric cars do not have gas tanks."""
+        print("This car doesn't have a gas tank to be filled.")    
 
 my_leaf = ElectricCar('nissan','leaf',2024)
 print(my_leaf.get_descriptive_name())
+my_leaf.describe_battery()
+
+
+class Battery:
+    """A simple attempt tp model a battery for an electric car."""
+
+
+    def __init__(self,battery_size=40):
+        """Initialie the vattery's attributes."""
+        self.battery_size = battery_size
+
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+
+
+
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+
+
+    def __init__(self,make,model,year):
+        """
+        Initialize attributes specific to an electric car.
+        Then initialie attributes specific to an electric car.
+        """
+
+        super().__init__(make,model,year)
+        self.battery = Battery() 
         
+
+
+my_leaf = ElectricCar('nissan','leaf',2024)   
+print(my_leaf.get_descriptive_name())
+my_leaf.battery.describe_battery() 
+
+
+#ice cream stands
+# Base class
+class Restaurant:
+    """A simple model of a restaurant."""
+    
+    def __init__(self, restaurant_name, cuisine_type):
+        """Initialize the restaurant's attributes."""
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+
+    def describe_restaurant(self):
+        """Print info about the restaurant."""
+        print(f"{self.restaurant_name} is a great restaurant that serves {self.cuisine_type} food.")
+
+    def open_restaurant(self):
+        """Announce that the restaurant is open."""
+        print(f"{self.restaurant_name} is now open!!")
+
+
+# Subclass
+class IceCreamStand(Restaurant):
+    """Represent a specific kind of restaurant — an ice cream stand."""
+
+    def __init__(self, restaurant_name, cuisine_type, flavours):
+        """Initialize attributes of the parent class, then the ice cream stand's attributes."""
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavours = flavours 
+
+    def display_flavours(self):
+        """Display the available ice cream flavours."""
+        print("Available ice cream flavours:")
+        for flavour in self.flavours:
+            print(f"- {flavour.title()}")
+
+
+
+junkie = IceCreamStand('My Stand', 'Dessert', ['vanilla', 'chocolate', 'strawberry'])
+junkie.describe_restaurant()
+junkie.display_flavours()
