@@ -141,6 +141,20 @@ class Battery:
     def describe_battery(self):
         """Print a statement describing the battery size."""
         print(f"This car has a {self.battery_size}-kWh battery.")
+    
+    def get_range(self):
+        """printing the range that the car has travelled."""
+        range = self.battery_size *1.5
+        return range
+
+    def upgrade_battery(self):
+        """Updates on the battery."""
+        if self.battery_size != 65:
+            self.battery_size = 65
+
+
+car_deets = Battery(56)
+car_deets.get_range()
 
 
 class ElectricCar(Car):
@@ -175,3 +189,68 @@ class IceCreamStand(Restaurant):
 junkie = IceCreamStand('My Stand', 'Dessert', ['vanilla', 'chocolate', 'strawberry'])
 junkie.describe_restaurant()
 junkie.display_flavours()
+
+
+
+class User:
+    """A simple user class."""
+
+    def __init__(self, first_name, last_name):
+        """Initialize user attributes."""
+        self.first_name = first_name
+        self.last_name = last_name
+
+    def describe_user(self):
+        """Describe the user."""
+        print(f"My name is {self.last_name} {self.first_name}.")
+
+    def greet_user(self):
+        """Greet the user."""
+        print(f"Hello {self.first_name} {self.last_name}, glad to have you back!")
+
+class Admin(User):
+    """"An attemp to practice the inheritance concept."""
+    def __init__(self, first_name, last_name ,privileges):
+        """initializing the user and admin attributes."""
+        super().__init__(first_name,last_name)
+        self.privileges = privileges
+    
+    def show_privileges(self):
+        """Function to display the user's privileges."""
+        print(f"these are your privileges:")
+        for privilege in self.privileges:
+            print(f"-{privilege}")
+
+
+new_one = Admin('Aminu','Ibra',['can send messages','can delete post','can ban user'])
+new_one.show_privileges()
+new_one.describe_user()
+
+
+#exercise privileges
+class Privileges():
+    def __init__(self,privileges):
+        """This is to make the privilege class a seperate class."""
+        self.privileges = privileges
+
+    def show_privileges(self):
+        """This is the function that will be used to show the user's privileges."""
+        print("the following are your privileges:")
+        for privilege in self.privileges:
+            print(f"-{privilege}")    
+
+
+class Admin(User):
+    """A special kind of user with the privileges of an Admin."""
+    def __init__(self,first_name,last_name,privileges):
+        super().__init__(first_name,last_name)
+        self.privileges = privileges
+
+
+new_admin = Admin(
+    'Aminu', 'Ibra', 
+    ['can add post', 'can delete post', 'can ban user']
+)
+
+new_admin.describe_user()
+new_admin.privileges.show_privileges()
