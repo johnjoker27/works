@@ -109,6 +109,55 @@ print(my_foods[-1:-4])
 friend_pizzas=['pepperoni','cheese','allseasoned','spice']
 my_drinks=friend_pizzas[:]
 friend_pizzas.append('superspice')
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None 
+
+class SinglyLinkedLists:
+    def __init__(self):
+        self.head = None
+
+def add(self, data):
+    new_node = Node(data)
+
+    if self.head is None:
+        self.head = new_node(data)
+    else:
+        current = self.head
+
+        while current.next is not None:
+            current = current.next
+
+            current.next = new_node
+
+def display(self):
+    current = self.head
+
+    while current is not None:
+        print(current.data, end = " -> ")
+        current = current.next
+
+    print("None")
+
+def search(self,value):
+    current = self.head
+
+    while current is not None:
+        if current.data == value:
+            return True
+
+        current = current.next
+
+    return False
+
+def delete(self,value):
+    current = self.head
+
+    while current is not None:
+        if current.data == value:
+            current.
 my_drinks.append('apple')
 print( f"funny enough my friends like {friend_foods}")
 print(f"I like to drink {my_drinks}")
